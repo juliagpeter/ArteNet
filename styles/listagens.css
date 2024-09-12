@@ -60,12 +60,19 @@ header {
     background-color: #45a049;
 }
 
-button {
-    background: none;
-    border: none;
+form button {
+    background-color: #007bff;
     color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
 }
 
 /* Estilo do conteúdo principal */
