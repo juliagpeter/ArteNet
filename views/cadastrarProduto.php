@@ -74,7 +74,7 @@
                 </select>
             </p>
             <p><label for="imagem">Foto: </label><input type="file" name="imagem" id="imagem" required></p>
-            <p><button class="form-button" type="submit" id='cadastrar' name='cadastrar' value="Cadastrar">Cadastrar</button></p>
+            <p><button type="submit" id='cadastrar' name='cadastrar' value="Cadastrar">Cadastrar</button></p>
         </form>
     </section>
 </main>
