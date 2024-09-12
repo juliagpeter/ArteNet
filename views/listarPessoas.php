@@ -32,6 +32,8 @@
 <main>
     <h2>Listagem de Usuários</h2>
     <h3>Usuário Logado: <?php echo $_SESSION['nome']; ?></h3>
+    <button class="geolocation-button" onclick="obterLocalizacao()">Obter Localização</button>
+    <p class="geolocation-result" id="resultado">Você está em: </p>
     <div class="produto-container">
         <?php
         $pessoasDAO = new PessoaDAO();

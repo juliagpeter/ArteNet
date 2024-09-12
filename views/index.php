@@ -34,8 +34,6 @@ include_once('../models/LanceDAO.php');
 <main>
     <h2>Listagem de Produtos</h2>
     <h3>Usuário Logado: <?php echo ($_SESSION['nome']); ?></h3>
-    <button class="geolocation-button" onclick="obterLocalizacao()">Obter Localização</button>
-    <p class="geolocation-result" id="resultado">Você está em: </p>
 
     <?php
     $produtosDAO = new ProdutoDAO();
