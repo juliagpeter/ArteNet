@@ -1,178 +1,157 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+/* Estilo básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-h2, h3 {
-    color: #444;
-    text-align: center;
+body {
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-main {
-    padding: 20px;
+header {
+    background-color: #4CAF50;
+    padding: 1rem;
 }
 
-.produto-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.produto-card {
-    display: flex;
-    width: 600px; /* Largura do card */
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.produto-imagem {
-    width: 40%;
-    object-fit: cover;
-}
-
-.produto-info {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.produto-info p {
-    margin: 5px 0;
-}
-
-.produto-info form {
-    margin-top: 10px;
-}
-
-.produto-info form input[type="number"] {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.produto-info form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50; /* Cor do botão */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 5px;
-}
-
-.produto-info form button:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
-}
-
-.acao-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #008CBA; /* Cor do botão Editar */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 5px;
-}
-
-.acao-form button[name="deletar"] {
-    background-color: #f44336; /* Cor do botão Deletar */
-}
-
-.acao-form button:hover {
-    opacity: 0.9; /* Opacidade ao passar o mouse */
-}
-
-/* Estilo básico da navbar */
 .navbar {
-    background-color: #333;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Estilo da lista de navegação */
 .nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
     display: flex;
-    flex-direction: column; /* Menu vertical */
+    flex-direction: column;
+    position: absolute;
+    background-color: #4CAF50;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    display: none;
 }
 
-/* Estilo dos itens da lista */
-.nav-list li {
-    position: relative;
-    margin: 0;
-}
-
-.nav-list li a {
+.navbar:hover .nav-list {
     display: block;
-    padding: 10px;
+}
+
+.nav-list li {
+    margin: 0.5rem 0;
+}
+
+.nav-list li a, .nav-list button {
     color: white;
     text-decoration: none;
-    background-color: #333;
-    transition: background-color 0.3s;
-}
-
-.nav-list li a:hover {
-    background-color: #555;
-}
-
-/* Dropdown */
-.nav-list li:hover ul {
+    padding: 1rem;
     display: block;
 }
 
-.nav-list ul {
-    display: none;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 100%; /* Alinha o dropdown à direita do item */
-    background-color: #333;
+.nav-list li a:hover, .nav-list button:hover {
+    background-color: #45a049;
 }
 
-/* Estilo dos links dentro do dropdown */
-.nav-list ul li a {
-    padding: 10px;
-    width: 200px; /* Largura do dropdown */
-    white-space: nowrap;
-}
-
-.nav-list ul li a:hover {
-    background-color: #555;
-}
-
-/* Estilo do botão de sair */
-form button {
-    background-color: #f44336;
-    color: white;
-    padding: 10px 20px;
+button {
+    background: none;
     border: none;
-    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
+    text-align: left;
 }
 
-form button:hover {
-    background-color: #d32f2f;
+/* Estilo do conteúdo principal */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Alinha o botão de sair à direita */
-.navbar form {
-    margin-left: auto;
+h2, h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.produto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.produto-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.produto-card:hover {
+    transform: scale(1.02);
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.produto-info h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.produto-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.produto-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.produto-form label {
+    margin-bottom: 0.5rem;
+}
+
+.produto-form input[type="number"] {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.produto-form button {
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.produto-form button:hover {
+    background-color: #45a049;
+}
+
+section p {
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .produto-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-list {
+        width: 100%;
+    }
 }
