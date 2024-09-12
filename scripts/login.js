@@ -34,3 +34,27 @@ function validarEmail(email) {
     const padraoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return padraoEmail.test(email);
 }
+
+// api webstorage
+
+ddocument.addEventListener('DOMContentLoaded', () => {
+    // Preencher o campo de email ao carregar a página
+    const emailInput = document.getElementById('email');
+    if (emailInput) {
+        const email = localStorage.getItem('email');
+        if (email) {
+            emailInput.value = email;
+        }
+    }
+
+    // Salvar o email no Local Storage ao fazer login
+    const formularioLogin = document.getElementById('formulario-login');
+    if (formularioLogin) {
+        formularioLogin.addEventListener('submit', () => {
+            const email = document.getElementById('email').value;
+            localStorage.setItem('email', email);
+        });
+    }
+});
+
+
