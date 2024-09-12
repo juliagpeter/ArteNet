@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../imagens/favicon.ico">
     <link rel="stylesheet" href="../styles/styles.css">
-    <script src="../scripts/script.js"></script>
+    <script src="../scripts/script.js" defer></script>
     <title>Cadastrar Produto</title>
     <?php
     include_once('../componentes/cabecalho.php');
@@ -20,6 +20,7 @@
 <body>
 <header>
     <nav class="navbar">
+        <button class="menu-toggle">☰</button>
         <ul class="nav-list">
             <li><a href="index.php">Página Inicial</a></li>
             <li><a href="cadastrarPessoa.php">Adicionar Pessoa</a></li>
@@ -51,9 +52,7 @@
                     <option value="Outros">Outros</option>
                 </select>
             </p>
-
             <p><label for="estoque">Estoque: </label><input type="number" name="estoque" id="estoque" required></p>
-
             <p>
                 <label for="categoria">Categoria: </label>
                 <select id="categoria" name="categoria_id" required>
@@ -63,7 +62,6 @@
                     <?php endforeach; ?>
                 </select>
             </p>
-
             <p>
                 <label for="artista">Artista: </label>
                 <select id="artista" name="artista_id" required>
@@ -73,9 +71,7 @@
                     <?php endforeach; ?>
                 </select>
             </p>
-
-            <p><label for="imagem">Foto: </label> <input type="file" name="imagem" id="imagem" required></p>
-
+            <p><label for="imagem">Foto: </label><input type="file" name="imagem" id="imagem" required></p>
             <p><button type="submit" id='cadastrar' name='cadastrar' value="Cadastrar">Cadastrar</button></p>
         </form>
     </section>
