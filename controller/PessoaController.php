@@ -160,7 +160,7 @@ if(isset($_POST['pesquisar'])){
 
     $retorno=$PessoaDAO->pesquisarPessoa($pessoa);
 
-    require_once('../../mostrarPessoa.php');
+    require_once('../views/mostrarPessoa.php');
 }
 #ALTERAR PERFIL
 if(isset($_POST['alterarPerfil'])){
