@@ -77,12 +77,12 @@
 
                         <form action="alterarProduto.php" method="POST" class="acao-form">
                             <input type="hidden" name="produto_id" value="<?php echo $produto['produto_id']; ?>">
-                            <button type="submit" name="editar">Editar</button>
+                            <button type="submit" name="editar" class="acao-button editar">Editar</button>
                         </form>
 
                         <form action="deletar_produto.php" method="POST" onsubmit="return confirma_excluir();" class="acao-form">
                             <input type="hidden" name="produto_id" value="<?php echo ($produto['produto_id']); ?>">
-                            <button type="submit" name="deletar">Deletar</button>
+                            <button type="submit" name="deletar" class="acao-button deletar">Deletar</button>
                         </form>
                     </div>
                 </div>
