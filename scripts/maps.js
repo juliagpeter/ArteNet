@@ -67,3 +67,25 @@ function locateUser() {
 // Adiciona o evento de clique ao botão
 document.getElementById('locate-button').onclick = locateUser;
 
+// Array de usuários (exemplo)
+const usuarios = [
+    { nome: 'Ariana Grande', ativo: true },
+    { nome: 'Sabrina Carpenter', ativo: false },
+    { nome: 'Taylor Swift', ativo: true }
+];
+
+// Função para renderizar a lista de usuários
+function renderizarUsuarios(lista) {
+    const ul = document.getElementById('user-list');
+    ul.innerHTML = lista.map(usuario => `<li>${usuario.nome}</li>`).join('');
+}
+
+// Função para filtrar e mostrar usuários ativos
+function mostrarUsuariosAtivos() {
+    const usuariosAtivos = usuarios.filter(usuario => usuario.ativo);
+    renderizarUsuarios(usuariosAtivos);
+}
+
+// Inicialmente, mostra todos os usuários
+renderizarUsuarios(usuarios);
+
