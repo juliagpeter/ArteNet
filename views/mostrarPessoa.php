@@ -17,13 +17,13 @@
     <nav class="navbar">
         <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
         <ul class="nav-list">
-            <li><a href="index.php">Página Inicial</a></li>
-            <li><a href="cadastrarPessoa.php">Adicionar Pessoa</a></li>
-            <li><a href="pesquisarPessoa.php">Pesquisar Pessoa</a></li>
-            <li><a href="listarPessoas.php">Listar Pessoas</a></li>
-            <li><a href="cadastrarProduto.php">Adicionar Produto</a></li>
-            <li><a href="listarProdutos.php">Listar Produto</a></li>
-            <li><a href="gerenciarLances.php">Gerenciar Lances</a></li>
+            <li><a href="../views/index.php">Página Inicial</a></li>
+            <li><a href="../views/cadastrarPessoa.php">Adicionar Pessoa</a></li>
+            <li><a href="../views/pesquisarPessoa.php">Pesquisar Pessoa</a></li>
+            <li><a href="../views/listarPessoas.php">Listar Pessoas</a></li>
+            <li><a href="../views/cadastrarProduto.php">Adicionar Produto</a></li>
+            <li><a href="../views/listarProdutos.php">Listar Produto</a></li>
+            <li><a href="../views/gerenciarLances.php">Gerenciar Lances</a></li>
             <li>
                 <form method="POST" action="../controller/PessoaController.php">
                     <button type="submit" name="sair">Sair</button>
