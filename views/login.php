@@ -10,7 +10,7 @@
 </head>
 <body>
 <main>
-    <h1>Login</h1>
+    <h1>Bem vindo ao ArteNet</h1>
     <section>
         <form action="../controller/PessoaController.php" method="post">
             <p>
