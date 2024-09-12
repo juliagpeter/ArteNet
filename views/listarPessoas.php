@@ -40,7 +40,8 @@
     <br>
 
     <div id="map" style="width: 100%; height: 400px;"></div>
-    <button id="locate-button">Mostrar minha localização</button>
+    <button id="locate-button" onclick="getLocation()">Mostrar minha localização</button>
+    <p id="location-result">Aguardando localização...</p>
 
     <br>
     <div class="produto-container">

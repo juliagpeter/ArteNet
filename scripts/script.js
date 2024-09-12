@@ -9,35 +9,42 @@ function confirma_excluir() {
 
 // api mapa
 
-// Inicializar o mapa na coordenada central e no nível de zoom desejado
-var map = L.map('map').setView([-23.5505, -46.6333], 13); // São Paulo como exemplo
+function getLocation() {
+    console.log('Botão clicado'); // Para verificar se o botão foi clicado
 
-// Adicionar o layer do mapa
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-// Função para obter a localização atual do usuário
-function locateUser() {
     if (navigator.geolocation) {
+        console.log('Geolocalização suportada, tentando obter localização...');
+
         navigator.geolocation.getCurrentPosition(function(position) {
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
 
-            // Atualizar a posição do mapa para a localização atual do usuário
-            map.setView([lat, lon], 13);
+            console.log('Localização obtida: ', lat, lon); // Para verificar as coordenadas
 
-            // Adicionar um marcador na localização atual
-            var marker = L.marker([lat, lon]).addTo(map)
-                .bindPopup('Você está aqui!')
-                .openPopup();
-        }, function() {
+            // URL da API Nominatim para reverse geocoding
+            var geocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`;
+
+            fetch(geocodeUrl)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Dados obtidos da API: ', data); // Verifica os dados retornados
+
+                    if (data.address) {
+                        var locationName = data.address.city || data.address.town || data.address.village || "localidade desconhecida";
+                        document.getElementById('location-result').innerText = `Você está em: ${locationName}`;
+                    } else {
+                        document.getElementById('location-result').innerText = "Não foi possível determinar a cidade.";
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar dados de geocodificação:', error);
+                    document.getElementById('location-result').innerText = "Ocorreu um erro ao buscar a cidade.";
+                });
+        }, function(error) {
+            console.error('Erro ao obter localização: ', error.message);
             alert('Não foi possível obter sua localização.');
         });
     } else {
         alert('Geolocalização não é suportada pelo seu navegador.');
     }
 }
-
-// Adicionar evento de clique ao botão
-document.getElementById('locate-button').addEventListener('click', locateUser);
