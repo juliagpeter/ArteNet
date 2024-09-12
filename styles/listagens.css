@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    color: #444;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.produto-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produto-card {
+    display: flex;
+    width: 600px; /* Largura do card */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.produto-imagem {
+    width: 40%; /* 40% da largura do card */
+    object-fit: cover; /* Assegura que todas as imagens tenham o mesmo tamanho sem distorção */
+}
+
+.produto-info {
+    padding: 20px;
+    flex: 1; /* Faz com que o restante do espaço seja preenchido pela área de informações */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produto-info p {
+    margin: 5px 0;
+}
+
+.produto-info form {
+    margin-top: 10px;
+}
+
+.produto-info form input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.produto-info form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.produto-info form button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+}
+
+.acao-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008CBA; /* Cor do botão Editar */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.acao-form button[name="deletar"] {
+    background-color: #f44336; /* Cor do botão Deletar */
+}
+
+.acao-form button:hover {
+    opacity: 0.9; /* Opacidade ao passar o mouse */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
