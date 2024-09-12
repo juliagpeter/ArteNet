@@ -1,4 +1,3 @@
-faça uma validação simples para esse html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
