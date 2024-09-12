@@ -17,7 +17,6 @@ if(isset($_POST['cadastrar'])){
     $tamanho_arquivo=$_FILES['imagem']['size'];
     $arquivo_temporario=$_FILES['imagem']['tmp_name'];
     $estoque = $_POST['estoque'];
-    $lance_atual = $_POST['lance_atual'];
     if (!empty($nome_arquivo)){
 
         if($sobrescrever=="não" && file_exists("$caminho/$nome_arquivo"))
@@ -43,7 +42,6 @@ if(isset($_POST['cadastrar'])){
             $produto->setArtistaId($artista_id);
             $produto->setimagem($nome_arquivo);
             $produto->setEstoque($estoque);
-            $produto->setLanceAtual($lance_atual);
 
             $ProdutoDAO= new ProdutoDAO($produto);
 
