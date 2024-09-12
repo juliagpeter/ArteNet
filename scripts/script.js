@@ -47,7 +47,10 @@ function toggleMenu() {
 function confirma_excluir() {
     return confirm("Confirma Exclusão?");
 }
-// Inicializar o mapa na coordenada central de Pelotas, RS
+
+// api mapa
+
+// Inicializar o mapa centrado em Pelotas, RS
 var map = L.map('map').setView([-31.7654, -52.3376], 13);
 
 // Adicionar o layer do mapa
@@ -57,8 +60,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Função para obter a localização atual do usuário
 function locateUser() {
+    console.log('Tentando obter localização...');
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
+            console.log('Localização obtida com sucesso!');
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
 
@@ -69,8 +74,9 @@ function locateUser() {
             var marker = L.marker([lat, lon]).addTo(map)
                 .bindPopup('Você está aqui!')
                 .openPopup();
-        }, function() {
-            alert('Não foi possível obter sua localização.');
+        }, function(error) {
+            console.error('Erro ao obter localização: ', error.message);
+            alert('Não foi possível obter sua localização: ' + error.message);
         });
     } else {
         alert('Geolocalização não é suportada pelo seu navegador.');
