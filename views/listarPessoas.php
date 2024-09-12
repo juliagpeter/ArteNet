@@ -37,6 +37,9 @@
 <main>
     <h2>Listagem de Usuários</h2>
     <h3>Usuário Logado: <?php echo $_SESSION['nome']; ?></h3>
+    <div id="map" style="width: 100%; height: 400px;"></div>
+    <button id="locate-button">Mostrar minha localização</button>
+    <br>
     <div class="produto-container">
         <?php
         $pessoasDAO = new PessoaDAO();
