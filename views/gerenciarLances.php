@@ -2,10 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Lances</title>
-    <link rel="stylesheet" href="../styles/gerenciar_lances.css"> <!-- Link para o CSS -->
+    <link rel="icon" type="image/x-icon" href="../imagens/favicon.ico">
+    <link rel="stylesheet" href="../styles/gerenciar.css">
+    <script src="../scripts/script.js"></script>
+    <title>Gerenciar</title>
     <?php
     include_once('../componentes/cabecalho.php');
     include_once('../models/LanceDAO.php');
@@ -13,9 +14,9 @@
     ?>
 </head>
 <body>
-
 <header>
     <nav class="navbar">
+        <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
         <ul class="nav-list">
             <li><a href="index.php">Página Inicial</a></li>
             <li><a href="cadastrarPessoa.php">Adicionar Pessoa</a></li>
@@ -24,13 +25,14 @@
             <li><a href="cadastrarProduto.php">Adicionar Produto</a></li>
             <li><a href="listarProdutos.php">Listar Produto</a></li>
             <li><a href="gerenciarLances.php">Gerenciar Lances</a></li>
-            <form method="POST" action="../controller/PessoaController.php">
-                <button type="submit" name="sair">Sair</button>
-            </form>
+            <li>
+                <form method="POST" action="../controller/PessoaController.php">
+                    <button type="submit" name="sair" class="logout-button">Sair</button>
+                </form>
+            </li>
         </ul>
     </nav>
 </header>
-
 <main>
     <h2>Gerenciar os Lances</h2>
 
