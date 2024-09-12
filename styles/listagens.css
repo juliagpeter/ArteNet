@@ -34,7 +34,7 @@ header {
     list-style: none;
     display: none; /* Inicialmente oculto */
     flex-direction: column;
-    background-color: #5c7dcc;
+    background-color: #bfd2ff;
     position: absolute;
     top: 60px; /* Ajuste para evitar sobreposição com o header */
     left: 0;
