@@ -43,7 +43,8 @@ include_once('../componentes/cabecalho.php');
             <p><label for="email">Email: </label><input type="text" name="email" id="email"></p>
             <p>
                 <label for="genero">Gênero: </label>
-                <select name="genero" id="genero">
+                <select name="genero" id="genero" required>
+                    <option value="" disabled selected>Selecione o seu gênero</option>
                     <option value="M">Masculino</option>
                     <option value="F">Feminino</option>
                     <option value="Outro">Outro</option>
