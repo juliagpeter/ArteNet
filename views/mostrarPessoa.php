@@ -12,6 +12,7 @@
     include_once('../componentes/cabecalho.php');
     ?>
 </head>
+<body>
 <header>
     <nav class="navbar">
         <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
@@ -31,39 +32,28 @@
         </ul>
     </nav>
 </header>
-<body>
-
 <main>
-    <h2> Pesquisa de Usuários </h2>
-    <h3> Usuário Logado:  <?php echo $_SESSION['nome']; ?>  </h3>
+    <h2>Pesquisa de Usuários</h2>
+    <h3>Usuário Logado: <?php echo $_SESSION['nome']; ?></h3>
     <?php
-
-    if(empty($retorno)){
-        ?>
-        <section>
-            <p>Não há usuários cadastrados.</p>
-        </section>
-        <?php
-    }
-    else
-    {
-        foreach($retorno as $pessoa){
-
+    if (empty($retorno)) {
+        echo "<section><p>Não há usuários cadastrados.</p></section>";
+    } else {
+        foreach ($retorno as $pessoa) {
             ?>
-            <section>
-                <p>Imagem: <img src="../imagens/<?php echo $pessoa['imagem'];?>" width='100px' height='100px'/></p>
+            <section class="user-card">
+                <p>Imagem: <img src="../imagens/<?php echo $pessoa['imagem']; ?>" class="user-image" alt="Imagem do usuário"/></p>
                 <p>Nome: <?php echo $pessoa['nome']; ?></p>
                 <p>Nascimento: <?php echo $pessoa['nascimento']; ?></p>
                 <p>E-mail: <?php echo $pessoa['email']; ?></p>
-                <p>Genero: <?php echo $pessoa['genero']; ?></p>
+                <p>Gênero: <?php echo $pessoa['genero']; ?></p>
                 <p>Senha: <?php echo $pessoa['senha']; ?></p>
                 <p>CPF: <?php echo $pessoa['cpf']; ?></p>
 
-                <form action="../controller/PessoaController.php" method="post">
-                    <button type="submit" name="editar" value="<?php echo $pessoa['pessoa_id']; ?>"> Editar </button>
-                    <button type="submit" name="deletar" value="<?php echo $pessoa['pessoa_id']; ?>" onclick = "return confirma_excluir()"> Deletar </button>
+                <form action="../controller/PessoaController.php" method="post" class="user-actions">
+                    <button type="submit" name="editar" value="<?php echo $pessoa['pessoa_id']; ?>" class="acao-button editar">Editar</button>
+                    <button type="submit" name="deletar" value="<?php echo $pessoa['pessoa_id']; ?>" class="acao-button deletar" onclick="return confirma_excluir()">Deletar</button>
                 </form>
-                <br><br>
             </section>
             <?php
         }
