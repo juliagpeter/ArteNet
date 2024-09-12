@@ -128,19 +128,20 @@ if(isset($_POST['alterar'])){
 }
 #DELETAR PESSOA
 if (isset($_POST['deletar'])) {
-    $pessoa_id = $_POST['deletar']; // Captura o ID da pessoa do POST
+    $pessoa_id = $_POST['deletar']; 
 
     $pessoa = new Pessoa();
-    $pessoa->setPessoaId($pessoa_id); // Define o ID da pessoa
 
-    $pessoaDAO = new PessoaDAO(); // Instancia o DAO
+    $pessoa->setPessoaId($pessoa_id);
 
-    $retorno = $pessoaDAO->deletarPessoa($pessoa); // Deleta a pessoa
+    $pessoaDAO = new PessoaDAO();
+    
+    $retorno = $pessoaDAO->deletarPessoa($pessoa); 
 
     if ($retorno) {
-        header('Location:../views/index.php'); // Redireciona após sucesso
+        header('Location:../views/index.php'); 
     } else {
-        echo 'Erro ao deletar a pessoa. Por favor, tente novamente.'; // Mensagem de erro
+        echo 'Erro ao deletar a pessoa. Por favor, tente novamente.'; 
     }
     header('Location:../views/listarPessoas.php');
 

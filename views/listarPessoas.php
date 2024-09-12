@@ -57,8 +57,8 @@
 
                         <form action="../controller/PessoaController.php" method="post" class="acao-form">
                             <input type="hidden" name="pessoa_id" value="<?php echo $pessoa['pessoa_id']; ?>">
-                            <button type="submit" name="editar">Editar</button>
-                            <button type="submit" name="deletar" onclick="return confirma_excluir();">Deletar</button>
+                            <p><button type="submit" id='editar' name='editar' value="editar"> Editar </button>  </p>
+                            <button type="submit" id='deletar' name="deletar" value="deletar" onclick="return confirma_excluir();">Deletar</button>
                         </form>
                     </div>
                 </div>
