@@ -211,3 +211,7 @@ section p {
 .acao-button.deletar:hover {
     background-color: #c82333;
 }
+
+.sair {
+    text-align: center;
+}

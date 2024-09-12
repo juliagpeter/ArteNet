@@ -28,7 +28,7 @@ include_once('../models/LanceDAO.php');
             <li><a href="gerenciarLances.php">Gerenciar Lances</a></li>
             <li>
                 <form method="POST" action="../controller/PessoaController.php">
-                    <button type="submit" name="sair" class="logout-button">Sair</button>
+                    <button type="submit" name="sair" class="sair">Sair</button>
                 </form>
             </li>
         </ul>
