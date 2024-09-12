@@ -49,33 +49,36 @@ function confirma_excluir() {
 }
 
 // api mapa
-    // Inicializa o mapa em Pelotas, RS
-    var map = L.map('map').setView([-31.7654, -52.3376], 13);
-
-    // Adiciona o layer do mapa
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
-
-    // Função simplificada para localizar o usuário
-    document.getElementById('locate-button').onclick = function() {
+document.getElementById('locate-button').onclick = function() {
     if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-    var lat = position.coords.latitude;
-    var lon = position.coords.longitude;
-    var userLocation = [lat, lon];
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
 
-    // Centraliza o mapa na localização do usuário
-    map.setView(userLocation, 13);
+            // URL da API Nominatim para reverse geocoding
+            var geocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`;
 
-    // Adiciona um marcador na localização atual
-    L.marker(userLocation).addTo(map)
-    .bindPopup('Você está aqui!')
-    .openPopup();
-}, function() {
-    alert('Não foi possível obter sua localização.');
-});
-} else {
-    alert('Geolocalização não é suportada pelo seu navegador.');
-}
+            fetch(geocodeUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.address && data.address.city) {
+                        document.getElementById('location-result').innerText = `Você está em: ${data.address.city}`;
+                    } else if (data.address && data.address.town) {
+                        document.getElementById('location-result').innerText = `Você está em: ${data.address.town}`;
+                    } else if (data.address && data.address.village) {
+                        document.getElementById('location-result').innerText = `Você está em: ${data.address.village}`;
+                    } else {
+                        document.getElementById('location-result').innerText = "Não foi possível determinar a cidade.";
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar dados de geocodificação:', error);
+                    document.getElementById('location-result').innerText = "Ocorreu um erro ao buscar a cidade.";
+                });
+        }, function() {
+            alert('Não foi possível obter sua localização.');
+        });
+    } else {
+        alert('Geolocalização não é suportada pelo seu navegador.');
+    }
 };

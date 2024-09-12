@@ -39,8 +39,8 @@
     <h3>Usuário Logado: <?php echo $_SESSION['nome']; ?></h3>
     <br>
 
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button id="locate-button">Mostrar minha localização</button>
+    <button id="locate-button">Obter minha localização</button>
+    <p id="location-result"></p>
 
     <br>
     <div class="produto-container">
