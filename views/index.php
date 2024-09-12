@@ -17,6 +17,7 @@ include_once('../models/LanceDAO.php');
 <body>
 <header>
     <nav class="navbar">
+        <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button> <!-- Botão para abrir o menu no mobile -->
         <ul class="nav-list">
             <li><a href="index.php">Página Inicial</a></li>
             <li><a href="cadastrarPessoa.php">Adicionar Pessoa</a></li>
@@ -25,12 +26,15 @@ include_once('../models/LanceDAO.php');
             <li><a href="cadastrarProduto.php">Adicionar Produto</a></li>
             <li><a href="listarProdutos.php">Listar Produto</a></li>
             <li><a href="gerenciarLances.php">Gerenciar Lances</a></li>
-            <form method="POST" action="../controller/PessoaController.php">
-                <button type="submit" name="sair">Sair</button>
-            </form>
+            <li>
+                <form method="POST" action="../controller/PessoaController.php">
+                    <button type="submit" name="sair" class="logout-button">Sair</button>
+                </form>
+            </li>
         </ul>
     </nav>
 </header>
+
 <main>
     <h2>Listagem de Produtos</h2>
     <h3>Usuário Logado: <?php echo ($_SESSION['nome']); ?></h3>
@@ -80,6 +84,11 @@ include_once('../models/LanceDAO.php');
 </main>
 
 <script type="text/javascript">
+    function toggleMenu() {
+        const navList = document.querySelector('.nav-list');
+        navList.classList.toggle('show');
+    }
+
     function confirma_excluir() {
         return confirm("Confirma Exclusão?");
     }
