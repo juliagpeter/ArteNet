@@ -1,63 +1,19 @@
-.navbar {
-    background-color: #333;
-    overflow: hidden;
-}
-
-.nav-list {
-    list-style-type: none;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
 
-.nav-list li {
-    float: left;
-    display: inline;
-}
-
-.nav-list li a, .dropdown-btn {
-    display: inline-block;
-    color: white;
+h2, h3 {
+    color: #444;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
 }
 
-.nav-list li a:hover, .dropdown:hover .dropdown-btn {
-    background-color: #ddd;
-    color: black;
+main {
+    padding: 20px;
 }
 
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Estilos para os cards dos itens */
 .produto-container {
     display: flex;
     flex-wrap: wrap;
@@ -66,64 +22,103 @@
 }
 
 .produto-card {
-    background-color: #f4f4f4;
-    border-radius: 10px;
+    display: flex;
+    width: 600px; /* Largura do card */
+    background-color: white;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.produto-card:hover {
-    transform: translateY(-10px);
+    overflow: hidden;
 }
 
 .produto-imagem {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 40%; /* 40% da largura do card */
+    object-fit: cover; /* Assegura que todas as imagens tenham o mesmo tamanho sem distorção */
 }
 
 .produto-info {
-    margin-top: 15px;
-}
-
-.produto-info h4 {
-    color: #333;
-    font-size: 22px;
+    padding: 20px;
+    flex: 1; /* Faz com que o restante do espaço seja preenchido pela área de informações */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .produto-info p {
-    color: #666;
-    font-size: 16px;
-    margin: 8px 0;
+    margin: 5px 0;
 }
 
-.produto-form {
-    margin-top: 15px;
+.produto-info form {
+    margin-top: 10px;
 }
 
-.produto-form input[type="number"] {
-    padding: 8px;
+.produto-info form input[type="number"] {
     width: 100%;
+    padding: 5px;
     margin-bottom: 10px;
+    border-radius: 4px;
     border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-.produto-form button {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+.produto-info form button {
     width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
 }
 
-.produto-form button:hover {
+.produto-info form button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+}
+
+.acao-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008CBA; /* Cor do botão Editar */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.acao-form button[name="deletar"] {
+    background-color: #f44336; /* Cor do botão Deletar */
+}
+
+.acao-form button:hover {
+    opacity: 0.9; /* Opacidade ao passar o mouse */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
     background-color: #555;
+    border-radius: 4px;
 }
