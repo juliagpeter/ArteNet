@@ -37,7 +37,7 @@ function validarEmail(email) {
 
 // api webstorage
 
-ddocument.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Preencher o campo de email ao carregar a página
     const emailInput = document.getElementById('email');
     if (emailInput) {
