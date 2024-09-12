@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../imagens/favicon.ico">
     <link rel="stylesheet" href="../styles/listagens.css">
-    <script src="../scripts/script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../scripts/maps.js" defer></script> <!-- Adiciona o defer para garantir que o DOM esteja carregado antes do script -->
     <title>Listar Usuários</title>
     <?php
     include_once('../componentes/cabecalho.php');
@@ -39,8 +41,8 @@
     <h3>Usuário Logado: <?php echo $_SESSION['nome']; ?></h3>
     <br>
 
-    <div id="map" style="width: 100%; height: 400px;"></div>
-    <button id="locate-button" onclick="getLocation()">Mostrar minha localização</button>
+    <div id="map"></div>
+    <button id="locate-button">Mostrar minha localização</button>
     <p id="location-result">Aguardando localização...</p>
 
     <br>
@@ -71,7 +73,7 @@
                             <input type="hidden" name="pessoa_id" value="<?php echo $pessoa['pessoa_id']; ?>">
                             <button type="submit" name="editar" class="acao-button editar">Editar</button>
                             <button type="submit" id='deletar' name="deletar" value="deletar" class="acao-button deletar" onclick="return confirma_excluir();">Deletar</button>
-                            </form>
+                        </form>
                         </form>
                     </div>
                 </div>
