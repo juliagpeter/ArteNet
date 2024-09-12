@@ -84,12 +84,5 @@
     }
     ?>
 </main>
-
-<script type="text/javascript">
-    function confirma_excluir() {
-        return confirm("Confirma exclusão?");
-    }
-</script>
-
 </body>
 </html>
