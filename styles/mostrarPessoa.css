@@ -35,7 +35,7 @@ header {
     list-style: none;
     display: none; /* Inicialmente oculto */
     flex-direction: column;
-    background-color: #4CAF50;
+    background-color: #5c7dcc;
     position: absolute;
     top: 60px; /* Ajuste para evitar sobreposição com o header */
     left: 0;
@@ -58,7 +58,7 @@ header {
 }
 
 .nav-list li a:hover, .nav-list button:hover {
-    background-color: #45a049;
+    background-color: #5c7dcc;
 }
 
 form button {
