@@ -39,10 +39,22 @@
 </header>
 <main>
     <section>
-        <form action="../controller/ProdutoController.php" method="post" enctype="multipart/form-data">
-            <p><label for="nome">Nome: </label><input type="text" name="nome" id="nome" required></p>
-            <p><label for="descricao">Descrição: </label><input type="text" name="descricao" id="descricao" required></p>
-            <p><label for="lance_minimo">Lance mínimo: </label><input type="number" step="0.01" name="lance_minimo" id="lance_minimo" required></p>
+        <form id="form-produto" action="../controller/ProdutoController.php" method="post" enctype="multipart/form-data">
+            <p>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" required>
+                <span id="erro-nome" class="mensagem-erro"></span>
+            </p>
+            <p>
+                <label for="descricao">Descrição: </label>
+                <input type="text" name="descricao" id="descricao" required>
+                <span id="erro-descricao" class="mensagem-erro"></span>
+            </p>
+            <p>
+                <label for="lance_minimo">Lance mínimo: </label>
+                <input type="number" step="0.01" name="lance_minimo" id="lance_minimo" required>
+                <span id="erro-lance-minimo" class="mensagem-erro"></span>
+            </p>
             <p>
                 <label for="tecnica">Técnica: </label>
                 <select name="tecnica" id="tecnica" required>
@@ -53,8 +65,13 @@
                     <option value="Digital">Digital</option>
                     <option value="Outros">Outros</option>
                 </select>
+                <span id="erro-tecnica" class="mensagem-erro"></span>
             </p>
-            <p><label for="estoque">Estoque: </label><input type="number" name="estoque" id="estoque" required></p>
+            <p>
+                <label for="estoque">Estoque: </label>
+                <input type="number" name="estoque" id="estoque" required>
+                <span id="erro-estoque" class="mensagem-erro"></span>
+            </p>
             <p>
                 <label for="categoria">Categoria: </label>
                 <select id="categoria" name="categoria_id" required>
@@ -63,6 +80,7 @@
                         <option value="<?= $categoria['categoria_id'] ?>"><?= $categoria['nome'] ?></option>
                     <?php endforeach; ?>
                 </select>
+                <span id="erro-categoria" class="mensagem-erro"></span>
             </p>
             <p>
                 <label for="artista">Artista: </label>
@@ -72,9 +90,16 @@
                         <option value="<?= $artista['artista_id'] ?>"><?= $artista['nome_artista'] ?></option>
                     <?php endforeach; ?>
                 </select>
+                <span id="erro-artista" class="mensagem-erro"></span>
             </p>
-            <p><label for="imagem">Foto: </label><input type="file" name="imagem" id="imagem" required></p>
-            <p><button type="submit" id='cadastrar' name='cadastrar' value="Cadastrar">Cadastrar</button></p>
+            <p>
+                <label for="imagem">Foto: </label>
+                <input type="file" name="imagem" id="imagem" required>
+                <span id="erro-imagem" class="mensagem-erro"></span>
+            </p>
+            <p>
+                <button type="submit" id="cadastrar" name="cadastrar" value="Cadastrar">Cadastrar</button>
+            </p>
         </form>
     </section>
 </main>
