@@ -18,7 +18,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Função para localizar o usuário e atualizar o mapa
 function locateUser() {
-    console.log('Botão clicado'); // Verifica se o botão foi clicado
 
     if (navigator.geolocation) {
         console.log('Geolocalização suportada, tentando obter localização...');

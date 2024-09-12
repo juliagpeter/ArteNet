@@ -40,11 +40,12 @@
     <h2>Listagem de Usuários</h2>
     <h3>Usuário Logado: <?php echo $_SESSION['nome']; ?></h3>
     <br>
-
     <div id="map"></div>
     <button id="locate-button">Mostrar minha localização</button>
     <p id="location-result">Aguardando localização...</p>
-
+    <br>
+    <button id="filter-active" onclick="mostrarUsuariosAtivos()">Mostrar Usuários Ativos</button>
+    <ul id="user-list"></ul>
     <br>
     <div class="produto-container">
         <?php
