@@ -97,7 +97,7 @@ form select {
     width: 100%;
 }
 
-form button {
+.form-button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -108,7 +108,7 @@ form button {
     transition: background-color 0.3s ease;
 }
 
-form button:hover {
+.form-button:hover {
     background-color: #0056b3;
 }
 
