@@ -30,7 +30,7 @@
             <li><a href="gerenciarLances.php">Gerenciar Lances</a></li>
             <li>
                 <form method="POST" action="../controller/PessoaController.php">
-                    <button class="acao-button.deletar" type="submit" name="sair">Sair</button>
+                    <button type="submit" name="sair">Sair</button>
                 </form>
             </li>
         </ul>
