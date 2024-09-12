@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/listagens.css">
+    <script src="../scripts/script.js"></script>
+    j
     <title>Listar Usuários</title>
     <?php
     include_once('../componentes/cabecalho.php');
@@ -14,6 +16,7 @@
 <body>
 <header>
     <nav class="navbar">
+        <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
         <ul class="nav-list">
             <li><a href="index.php">Página Inicial</a></li>
             <li><a href="cadastrarPessoa.php">Adicionar Pessoa</a></li>
@@ -22,9 +25,11 @@
             <li><a href="cadastrarProduto.php">Adicionar Produto</a></li>
             <li><a href="listarProdutos.php">Listar Produto</a></li>
             <li><a href="gerenciarLances.php">Gerenciar Lances</a></li>
-            <form method="POST" action="../controller/PessoaController.php">
-                <button type="submit" name="sair">Sair</button>
-            </form>
+            <li>
+                <form method="POST" action="../controller/PessoaController.php">
+                    <button type="submit" name="sair">Sair</button>
+                </form>
+            </li>
         </ul>
     </nav>
 </header>
@@ -59,7 +64,7 @@
 
                         <form action="../controller/PessoaController.php" method="post" class="acao-form">
                             <input type="hidden" name="pessoa_id" value="<?php echo $pessoa['pessoa_id']; ?>">
-                            <p><button type="submit" id='editar' name='editar' value="editar"> Editar </button>  </p>
+                            <p><button type="submit" id='editar' name='editar' value="editar"> Editar </button></p>
                             <button type="submit" id='deletar' name="deletar" value="deletar" onclick="return confirma_excluir();">Deletar</button>
                         </form>
                     </div>
@@ -70,11 +75,5 @@
         ?>
     </div>
 </main>
-
-<script type="text/javascript">
-    function confirma_excluir() {
-        return confirm("Confirma Exclusão?");
-    }
-</script>
 </body>
 </html>

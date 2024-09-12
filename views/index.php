@@ -11,7 +11,7 @@ include_once('../models/LanceDAO.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../imagens/favicon.ico">
     <link rel="stylesheet" href="../styles/listagens.css">
-    <script src="../scripts/script.js" defer></script>
+    <script src="../scripts/script.js"></script>
     <title>ArteNet</title>
 </head>
 <body>
