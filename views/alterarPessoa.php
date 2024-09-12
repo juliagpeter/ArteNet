@@ -11,7 +11,7 @@ include_once('../componentes/header.php');
 <main>
     <section>
         <form action="../controller/PessoaController.php" method="post">
-            <p><label for="nome">Nome: </label><input type="text" name="nome" id="nome" value="<?php echo $retorno['nome']; ?>"></p>
+            <p><label for="nome">nome: </label><input type="text" name="nome" id="nome" value="<?php echo $retorno['nome']; ?>"></p>
             <p><label for="nascimento">Nascimento: </label><input type="date" name="nascimento" id="nascimento" value="<?php echo $retorno['nascimento']; ?>"></p>
             <p><label for="email">Email: </label><input type="text" name="email" id="email" value="<?php echo $retorno['email']; ?>"></p>
             <p><label for="genero">Gênero: </label>
