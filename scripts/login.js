@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const campoEmail = document.getElementById('email');
         const erroEmail = document.getElementById('erro-email');
         if (!campoEmail.value || !validarEmail(campoEmail.value)) {
-            erroEmail.textContent = 'Por favor, insira um email válido.';
+            erroEmail.textContent = 'Insira um email válido.';
             valido = false;
         } else {
             erroEmail.textContent = '';
@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // validar senha
         const campoSenha = document.getElementById('senha');
         const erroSenha = document.getElementById('erro-senha');
-        if (!campoSenha.value || campoSenha.value.length < 6) {
-            erroSenha.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+        if (!campoSenha.value || campoSenha.value.length < 3) {
+            erroSenha.textContent = 'Senha inválida.';
             valido = false;
         } else {
             erroSenha.textContent = '';
