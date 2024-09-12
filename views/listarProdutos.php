@@ -65,16 +65,6 @@
                         <p><strong>Estoque:</strong> <?php echo ($produto['estoque']); ?></p>
                         <p><strong>Lance atual:</strong> R$ <?php echo ($produto['lance_atual']); ?></p>
 
-                        <form action="../controller/LanceController.php" method="POST" class="lance-form">
-                            <input type="hidden" name="produto_id" value="<?php echo ($produto['produto_id']); ?>">
-                            <input type="hidden" name="pessoa_id" value="<?php echo ($_SESSION['pessoa_id']); ?>">
-
-                            <label for="valor_<?php echo ($produto['produto_id']); ?>">Valor do Lance:</label>
-                            <input type="number" id="valor_<?php echo ($produto['produto_id']); ?>" name="valor" min="0" step="0.01" required>
-
-                            <button type="submit" name="cadastrar">Enviar Lance</button>
-                        </form>
-
                         <form action="alterarProduto.php" method="POST" class="acao-form">
                             <input type="hidden" name="produto_id" value="<?php echo $produto['produto_id']; ?>">
                             <button type="submit" name="editar" class="acao-button editar">Editar</button>
