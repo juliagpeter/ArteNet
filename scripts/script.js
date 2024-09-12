@@ -49,39 +49,33 @@ function confirma_excluir() {
 }
 
 // api mapa
+    // Inicializa o mapa em Pelotas, RS
+    var map = L.map('map').setView([-31.7654, -52.3376], 13);
 
-// Inicializar o mapa centrado em Pelotas, RS
-var map = L.map('map').setView([-31.7654, -52.3376], 13);
-
-// Adicionar o layer do mapa
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    // Adiciona o layer do mapa
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Função para obter a localização atual do usuário
-function locateUser() {
-    console.log('Tentando obter localização...');
+    // Função simplificada para localizar o usuário
+    document.getElementById('locate-button').onclick = function() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            console.log('Localização obtida com sucesso!');
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;
+    navigator.geolocation.getCurrentPosition(function(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var userLocation = [lat, lon];
 
-            // Atualizar a posição do mapa para a localização atual do usuário
-            map.setView([lat, lon], 13);
+    // Centraliza o mapa na localização do usuário
+    map.setView(userLocation, 13);
 
-            // Adicionar um marcador na localização atual
-            var marker = L.marker([lat, lon]).addTo(map)
-                .bindPopup('Você está aqui!')
-                .openPopup();
-        }, function(error) {
-            console.error('Erro ao obter localização: ', error.message);
-            alert('Não foi possível obter sua localização: ' + error.message);
-        });
-    } else {
-        alert('Geolocalização não é suportada pelo seu navegador.');
-    }
+    // Adiciona um marcador na localização atual
+    L.marker(userLocation).addTo(map)
+    .bindPopup('Você está aqui!')
+    .openPopup();
+}, function() {
+    alert('Não foi possível obter sua localização.');
+});
+} else {
+    alert('Geolocalização não é suportada pelo seu navegador.');
 }
-
-// Adicionar evento de clique ao botão
-document.getElementById('locate-button').addEventListener('click', locateUser);
+};
