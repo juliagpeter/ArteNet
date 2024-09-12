@@ -65,3 +65,10 @@ form button {
 form button:hover {
     background-color: #07173c;
 }
+
+.mensagem-erro {
+    color: red;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+

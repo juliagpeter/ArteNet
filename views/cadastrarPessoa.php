@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../imagens/favicon.ico">
     <link rel="stylesheet" href="../styles/form.css">
-    <script src="../scripts/script.js" defer></script>
+    <script src="../scripts/casped.js" defer></script>
     <title>Cadastrar Usuário</title>
 
 <?php
@@ -37,10 +37,22 @@ include_once('../componentes/cabecalho.php');
 <body>
 <main>
     <section>
-        <form action="../controller/PessoaController.php" method="post" enctype="multipart/form-data">
-            <p><label for="nome">Nome: </label><input type="text" name="nome" id="nome"></p>
-            <p><label for="nascimento">Nascimento: </label><input type="date" name="nascimento" id="nascimento"></p>
-            <p><label for="email">Email: </label><input type="text" name="email" id="email"></p>
+        <form id="formulario-cadastro" action="../controller/PessoaController.php" method="post" enctype="multipart/form-data">
+            <p>
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome">
+                <span id="erro-nome" class="mensagem-erro"></span>
+            </p>
+            <p>
+                <label for="nascimento">Nascimento: </label>
+                <input type="date" name="nascimento" id="nascimento">
+                <span id="erro-nascimento" class="mensagem-erro"></span>
+            </p>
+            <p>
+                <label for="email">Email: </label>
+                <input type="text" name="email" id="email">
+                <span id="erro-email" class="mensagem-erro"></span>
+            </p>
             <p>
                 <label for="genero">Gênero: </label>
                 <select name="genero" id="genero" required>
@@ -49,11 +61,26 @@ include_once('../componentes/cabecalho.php');
                     <option value="F">Feminino</option>
                     <option value="Outro">Outro</option>
                 </select>
+                <span id="erro-genero" class="mensagem-erro"></span>
             </p>
-            <p><label for="senha">Senha: </label> <input type="password" name="senha" id="senha"></p>
-            <p><label for="cpf">CPF: </label><input type="text" name="cpf" id="cpf"></p>
-            <p><label for="imagem">Foto: </label> <input type="file" name="imagem" id="imagem"></p>
-            <p><button type="submit" id='cadastrar' name='cadastrar' value="Cadastrar"> Cadastrar </button>  </p>
+            <p>
+                <label for="senha">Senha: </label>
+                <input type="password" name="senha" id="senha">
+                <span id="erro-senha" class="mensagem-erro"></span>
+            </p>
+            <p>
+                <label for="cpf">CPF: </label>
+                <input type="text" name="cpf" id="cpf">
+                <span id="erro-cpf" class="mensagem-erro"></span>
+            </p>
+            <p>
+                <label for="imagem">Foto: </label>
+                <input type="file" name="imagem" id="imagem">
+                <span id="erro-imagem" class="mensagem-erro"></span>
+            </p>
+            <p>
+                <button type="submit" id="cadastrar" name="cadastrar" value="Cadastrar">Cadastrar</button>
+            </p>
         </form>
     </section>
 </main>

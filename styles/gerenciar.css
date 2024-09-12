@@ -120,3 +120,10 @@ form {
         font-size: 12px;
     }
 }
+
+.mensagem-erro {
+    color: red;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+

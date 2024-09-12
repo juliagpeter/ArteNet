@@ -167,3 +167,10 @@ h2, h3 {
         height: 80px;
     }
 }
+
+.mensagem-erro {
+    color: red;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+

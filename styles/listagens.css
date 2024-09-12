@@ -211,3 +211,9 @@ section p {
 .acao-button.deletar:hover {
     background-color: #c82333;
 }
+
+.mensagem-erro {
+    color: red;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
